@@ -8,6 +8,7 @@
  * @param diff 时间相差天数
  * @returns {*} 日期字符串
  */
+```javascript
 // console.log(timeDifference(new Date(), -20))
 function timeDifference(star, diff) {
     //star必须是时间戳
@@ -35,9 +36,8 @@ function timeDifference(star, diff) {
         return (myyear + "-" + mymonth + "-" + myweekday);
     }
 }
-
-
-
+```javascript
+```javascript
 /**
  * 按照指定格式将日期转换成字符串
  * @param format 日期格式
@@ -61,8 +61,8 @@ Date.prototype.format = function (format) {
                 ("00" + o[k]).substr(("" + o[k]).length));
     return format;
 }
-
-
+```javascript
+```javascript
 /**
  * 获取一定时间周期的具体时间
  * @param data 详情请看if判断
@@ -124,11 +124,11 @@ function getDataDay(data) {
         return (myyear + "/" + mymonth + "/" + myweekday);
     }
 }
-
+```javascript
 
 
 #Cookie操作
-
+```javascript
 function getCookie(c_name) {
     if (document.cookie.length > 0) {
         var c_start = document.cookie.indexOf(c_name + "=")
@@ -150,8 +150,9 @@ function setCookie(c_name, value, expiredays) {
     exdate.setDate(exdate.getDate() + expiredays);
     document.cookie = c_name + "=" + escape(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
 }
- 
+ ```javascript
 # 获取一个唯一ID
+```javascript
 function generateUUID(len, radix) {
     var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
     var uuid = [], i;
@@ -179,4 +180,4 @@ function generateUUID(len, radix) {
     }
     return uuid.join('');
 };
-
+```javascript
