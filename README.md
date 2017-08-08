@@ -150,7 +150,7 @@ function setCookie(c_name, value, expiredays) {
     exdate.setDate(exdate.getDate() + expiredays);
     document.cookie = c_name + "=" + escape(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
 }
- ```
+```
 # 获取一个唯一ID
 ```javascript
 function generateUUID(len, radix) {
