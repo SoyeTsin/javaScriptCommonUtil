@@ -37,12 +37,12 @@ function timeDifference(star, diff) {
     }
 }
 ```javascript
-```javascript
 /**
  * 按照指定格式将日期转换成字符串
  * @param format 日期格式
  * @returns {*} 日期字符串
  */
+```javascript
 Date.prototype.format = function (format) {
     var o = {
         "M+": this.getMonth() + 1, //month
@@ -62,12 +62,12 @@ Date.prototype.format = function (format) {
     return format;
 }
 ```javascript
-```javascript
 /**
  * 获取一定时间周期的具体时间
  * @param data 详情请看if判断
  * @returns {*} 日期字符串
  */
+```javascript
  //console.log(getDataDay('yesterday'));
 function getDataDay(data) {
     /**
