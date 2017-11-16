@@ -70,45 +70,53 @@ Date.prototype.format = function (format) {
 ```javascript
  //console.log(getDataDay('yesterday'));
 function getDataDay(data) {
-    /**
-     * 时间日期类
-     */
-    var now = new Date(); //当前日期
-    var nowDayOfWeek = now.getDay(); //今天本周的第几天
-    var nowDay = now.getDate(); //当前日
-    var nowMonth = now.getMonth(); //当前月
-    var nowYear = now.getYear(); //当前年
-    nowYear += (nowYear < 2000) ? 1900 : 0; //
-
-    var lastMonthDate = new Date(); //上月日期
-    lastMonthDate.setDate(1);
-    lastMonthDate.setMonth(lastMonthDate.getMonth() - 1);
-    var lastYear = lastMonthDate.getYear();
-    var lastMonth = lastMonthDate.getMonth();
-    if (data == 'yesterday') {
-        var yesterday = new Date(nowYear, nowMonth, nowDay - 1); //当前日
-        return formatDate(yesterday);
-    } else if (data == 'weekStart') {
-        //获取本周第一天日期
-        var weekStart = new Date(nowYear, nowMonth, nowDay + (1 - nowDayOfWeek));
-        return formatDate(weekStart);
-    } else if (data == 'weekEnd') {
-        //获取本周第一天日期
-        var weekStart = new Date(nowYear, nowMonth, nowDay + (7 - nowDayOfWeek));
-        return formatDate(weekStart);
-    } else if (data == 'lastWeekStart') {
-        //获得上周第一天日期
-        var lastWeekStart = new Date(nowYear, nowMonth, nowDay + (-6 - nowDayOfWeek));
-        return formatDate(lastWeekStart);
-    } else if (data == 'lastWeekEnd') {
-        //获得上周最后一天日期
-        var lastWeekEnd = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek);
-        return formatDate(lastWeekEnd);
-    } else if (data == 'monthStart') {
-        //本月第一天
-        var monthStartDate = new Date(nowYear, nowMonth, 1);
-        return formatDate(monthStartDate);
-    }
+   /**         * 时间日期类
+         */
+        var now = new Date(); //当前日期
+        var nowDayOfWeek = now.getDay(); //今天本周的第几天
+        var nowDay = now.getDate(); //当前日
+        var nowMonth = now.getMonth(); //当前月
+        var nowYear = now.getYear(); //当前年
+        nowYear += (nowYear < 2000) ? 1900 : 0; //
+        if (data == 'today') {
+            var yesterday = new Date(nowYear, nowMonth, nowDay); //今天
+            return formatDate(yesterday);
+        } else if (data == 'yesterday') {
+            var yesterday = new Date(nowYear, nowMonth, nowDay - 1); //昨天
+            return formatDate(yesterday);
+        } else if (data == 'weekStart') {
+            //获取本周第一天日期
+            var weekStart = new Date(nowYear, nowMonth, nowDay + (1 - nowDayOfWeek));
+            return formatDate(weekStart);
+        } else if (data == 'weekEnd') {
+            //获取本周最后一天日期
+            var weekStart = new Date(nowYear, nowMonth, nowDay + (7 - nowDayOfWeek));
+            return formatDate(weekStart);
+        } else if (data == 'lastWeekStart') {
+            //获得上周第一天日期
+            var lastWeekStart = new Date(nowYear, nowMonth, nowDay + (-6 - nowDayOfWeek));
+            return formatDate(lastWeekStart);
+        } else if (data == 'lastWeekEnd') {
+            //获得上周最后一天日期
+            var lastWeekEnd = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek);
+            return formatDate(lastWeekEnd);
+        } else if (data == 'monthStart') {
+            //本月第一天
+            var monthStartDate = new Date(nowYear, nowMonth, 1);
+            return formatDate(monthStartDate);
+        } else if (data == 'monthEnd') {
+            //本月最后一天
+            var monthStartDate = new Date(nowYear, nowMonth + 1, -1);
+            return formatDate(monthStartDate);
+        } else if (data == 'lastMonthStart') {
+            //上月第一天
+            var monthStartDate = new Date(nowYear, (nowMonth - 1), 1);
+            return formatDate(monthStartDate);
+        } else if (data == 'LastMonthEnd') {
+            //上月最后一天
+            var monthStartDate = new Date(nowYear, nowMonth, -1);
+            return formatDate(monthStartDate);
+        }
     //格式化时间
     function formatDate(date) {
         var myyear = date.getFullYear();
