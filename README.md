@@ -1,4 +1,23 @@
 # 这是一些javascript的常用小轮子
+#js 数组去重的最优方法
+利用ES6的set
+
+Set数据结构，它类似于数组，其成员的值都是唯一的。
+
+利用Array.from将Set结构转换成数组
+```javascript
+function dedupe(array){
+ return Array.from(new Set(array));
+}
+dedupe([1,1,2,3]) //[1,2,3]
+```
+拓展运算符(...)内部使用for...of循环
+```javascript
+let arr = [1,2,3,3];
+let resultarr = [...new Set(arr)]; 
+console.log(resultarr); //[1,2,3]
+```
+
 
 #时间相关的一些方法
 
